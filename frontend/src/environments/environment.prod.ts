@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://mkulima-backend.onrender.com/api'
+    apiUrl: 'https://mkulima-wsln.onrender.com/api'
 };
