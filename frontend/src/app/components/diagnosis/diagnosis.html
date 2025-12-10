@@ -1,0 +1,24 @@
+<div class="card">
+    <h2>Crop Disease Diagnosis</h2>
+    <div class="form-group">
+        <label>Describe the issue (e.g., "Yellow spots on maize leaves")</label>
+        <textarea [(ngModel)]="imageDescription" rows="4" placeholder="Enter details..."></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Your Region</label>
+        <input type="text" [(ngModel)]="region" placeholder="Type your Region (e.g. Kiambu)">
+    </div>
+
+    <button (click)="submitDiagnosis()" [disabled]="loading">
+        {{ loading ? 'Analyzing...' : 'Diagnose' }}
+    </button>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+
+    <div *ngIf="diagnosisResult" class="result">
+        <h3>Diagnosis Result</h3>
+        <p><strong>Problem:</strong> {{ diagnosisResult.diagnosis }}</p>
+        <p><strong>Advice:</strong> {{ diagnosisResult.advice }}</p>
+    </div>
+</div>

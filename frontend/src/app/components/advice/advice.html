@@ -1,0 +1,24 @@
+<div class="card">
+    <h2>Farming Advice</h2>
+
+    <div class="form-group">
+        <label>Topic (e.g., "Best planting time for Maize")</label>
+        <input type="text" [(ngModel)]="topic" placeholder="Ask anything...">
+    </div>
+
+    <div class="form-group">
+        <label>Location</label>
+        <input type="text" [(ngModel)]="location" placeholder="Your Village/Town">
+    </div>
+
+    <button (click)="getAdvice()" [disabled]="loading">
+        {{ loading ? 'Thinking...' : 'Get Advice' }}
+    </button>
+
+    <p *ngIf="loading" class="info">AI Advisor is thinking...</p>
+    <p *ngIf="error" class="error">{{ error }}</p>
+
+    <div *ngIf="advice" class="advice-result">
+        <p>{{ advice }}</p>
+    </div>
+</div>

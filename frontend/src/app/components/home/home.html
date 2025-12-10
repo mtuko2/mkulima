@@ -1,0 +1,27 @@
+<div class="hero">
+    <h2>Welcome to Mkulima Help</h2>
+    <p>Your AI-Powered Farming Assistant</p>
+
+    <div class="weather-widget" *ngIf="weather">
+        <h3>Current Weather in {{ weather.location }}</h3>
+        <p class="temp">{{ weather.temp }}°C</p>
+        <p class="condition">{{ weather.condition }}</p>
+    </div>
+</div>
+
+<div class="features">
+    <a routerLink="/diagnosis" class="feature-card">
+        <h3>🏥 Crop Diagnosis</h3>
+        <p>Identify pests and diseases instantly.</p>
+    </a>
+
+    <a routerLink="/advice" class="feature-card">
+        <h3>🌱 Smart Advice</h3>
+        <p>Get personalized farming tips.</p>
+    </a>
+
+    <a routerLink="/market" class="feature-card">
+        <h3>💰 Market Prices</h3>
+        <p>Check real-time crop prices.</p>
+    </a>
+</div>

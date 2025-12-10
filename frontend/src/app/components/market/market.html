@@ -1,0 +1,53 @@
+<div class="card">
+    <h2>Market Prices</h2>
+
+    <div class="form-group">
+        <label>Crop</label>
+        <select [(ngModel)]="crop">
+            <option value="Maize">Maize</option>
+            <option value="Beans">Beans</option>
+            <option value="Potatoes">Potatoes</option>
+            <option value="Rice">Rice</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Sorghum">Sorghum</option>
+            <option value="Millet">Millet</option>
+            <option value="Cassava">Cassava</option>
+            <option value="Sweet Potatoes">Sweet Potatoes</option>
+            <option value="Tomatoes">Tomatoes</option>
+            <option value="Cabbages">Cabbages</option>
+            <option value="Sukuma Wiki">Sukuma Wiki (Kale)</option>
+            <option value="Onions">Onions</option>
+            <option value="Bananas">Bananas</option>
+            <option value="Mangoes">Mangoes</option>
+            <option value="Avocados">Avocados</option>
+            <option value="Passion Fruits">Passion Fruits</option>
+            <option value="Oranges">Oranges</option>
+            <option value="Watermelons">Watermelons</option>
+            <option value="Coffee">Coffee</option>
+            <option value="Tea">Tea</option>
+            <option value="Milk">Milk</option>
+            <option value="Eggs">Eggs</option>
+            <option value="Beef">Beef</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Pork">Pork</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Region or Town</label>
+        <input type="text" [(ngModel)]="region" placeholder="Type your Region (e.g. Kiambu, Mwea)">
+    </div>
+
+    <button (click)="checkPrices()" [disabled]="loading">
+        {{ loading ? 'Analyzing Market...' : 'Check Prices' }}
+    </button>
+
+    <p *ngIf="loading" class="info">Consulting AI Advisor...</p>
+    <p *ngIf="error" class="error">{{ error }}</p>
+
+    <div *ngIf="marketData" class="market-result">
+        <p><strong>Price:</strong> {{ marketData.price }}</p>
+        <p><strong>Trend:</strong> <span class="trend">{{ marketData.trend }}</span></p>
+        <p class="source">Source: {{ marketData.source }}</p>
+    </div>
+</div>

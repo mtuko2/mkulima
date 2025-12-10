@@ -1,0 +1,16 @@
+.market-result {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.trend {
+    font-weight: bold;
+    color: green;
+}
+
+.source {
+    font-size: 0.8rem;
+    color: #666;
+}
