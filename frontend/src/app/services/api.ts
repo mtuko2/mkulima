@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:3000/api'; // Dev environment
+  private baseUrl = 'https://mkulima-backend.onrender.com/api'; // Use your Render URL
 
   constructor(private http: HttpClient) { }
 
